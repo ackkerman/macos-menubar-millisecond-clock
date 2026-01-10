@@ -25,6 +25,9 @@ bundle: release
 
 app: bundle
 
+install: app
+	cp -R $(APP_BUNDLE) /Applications/$(APP_BUNDLE)
+
 clean:
 	$(SWIFT) package clean
 	rm -rf $(APP_BUNDLE)
