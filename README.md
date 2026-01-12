@@ -2,6 +2,12 @@
 
 A tiny menu bar resident app that shows the current time as `HH:mm:ss.SSS`. It hides from the Dock and updates every 10ms by default (tune `updateInterval` in `Sources/msbar/msbar.swift` if you prefer ~16.6ms/60Hz).
 
+### Features
+- Menu bar clock with monospaced digits to avoid jitter
+- Click menu to switch display format (`HH:mm:ss.SSS`, `HH:mm:ss`, `HH:mm`, `HH:mm:ss` on first line + `SSS` on second line, `mm:ss.SSS`)
+- Toggle “Run on Startup” (Launch at Login) from the menu
+- Quit option in the menu
+
 ## Requirements
 - macOS 13+ (AppKit)
 - SwiftPM (Xcode GUI not required) / Swift 6 toolchain
