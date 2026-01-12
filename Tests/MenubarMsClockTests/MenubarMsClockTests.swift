@@ -1,7 +1,7 @@
 import XCTest
-@testable import msbar
+@testable import MenubarMsClock
 
-final class msbarTests: XCTestCase {
+final class MenubarMsClockTests: XCTestCase {
     func testClockFormatterFormat() {
         let formatter = makeClockFormatter(for: .hmsMilliseconds)
         formatter.timeZone = TimeZone(secondsFromGMT: 0)

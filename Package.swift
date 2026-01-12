@@ -4,17 +4,17 @@
 import PackageDescription
 
 let package = Package(
-    name: "msbar",
+    name: "MenubarMsClock",
     platforms: [
         .macOS(.v13)
     ],
     targets: [
         .executableTarget(
-            name: "msbar"
+            name: "MenubarMsClock"
         ),
         .testTarget(
-            name: "msbarTests",
-            dependencies: ["msbar"]
+            name: "MenubarMsClockTests",
+            dependencies: ["MenubarMsClock"]
         )
     ]
 )

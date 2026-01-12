@@ -1,6 +1,6 @@
-# msbar — macOS Menu Bar Millisecond Clock
+# MenubarMsClock — macOS Menu Bar Millisecond Clock
 
-A tiny menu bar resident app that shows the current time as `HH:mm:ss.SSS`. It hides from the Dock and updates every 10ms by default (tune `updateInterval` in `Sources/msbar/msbar.swift` if you prefer ~16.6ms/60Hz).
+A tiny menu bar resident app that shows the current time as `HH:mm:ss.SSS`. It hides from the Dock and updates every 10ms by default (tune `updateInterval` in `Sources/MenubarMsClock/MenubarMsClock.swift` if you prefer ~16.6ms/60Hz).
 
 ### Features
 - Menu bar clock with monospaced digits to avoid jitter
@@ -15,14 +15,14 @@ A tiny menu bar resident app that shows the current time as `HH:mm:ss.SSS`. It h
 ## Quick start
 ```bash
 make release          # build release binary
-./make_app.sh         # produce msbar.app
-open msbar.app        # launch (no Dock icon)
+./make_app.sh         # produce MenubarMsClock.app
+open MenubarMsClock.app        # launch (no Dock icon)
 ```
 
 Install by copying the generated `.app` wherever you like, e.g. `/Applications`:
 ```bash
-cp -R msbar.app /Applications/
-open /Applications/msbar.app
+cp -R MenubarMsClock.app /Applications/
+open /Applications/MenubarMsClock.app
 ```
 For the first launch, right-click → “Open” helps pass Gatekeeper prompts.
 

@@ -1,4 +1,4 @@
-# spec.md — msbar（macOS Menu Bar Millisecond Clock）
+# spec.md — MenubarMsClock（macOS Menu Bar Millisecond Clock）
 
 ## 1. 概要
 macOS のメニューバー（NSStatusItem）に現在時刻を **ミリ秒（SSS）まで**表示する、最小構成の常駐アプリを実装する。
@@ -72,25 +72,25 @@ macOS のメニューバー（NSStatusItem）に現在時刻を **ミリ秒（SS
 ### 5.4 ビルドとパッケージング
 - SwiftPM プロジェクト
 - `swift build -c release`
-- `.build/release/msbar` を `.app` にラップ
+- `.build/release/MenubarMsClock` を `.app` にラップ
 - ローカル用途の ad-hoc codesign（任意）
-  - `codesign --force --deep --sign - msbar.app`（失敗しても起動できる場合がある）
+  - `codesign --force --deep --sign - MenubarMsClock.app`（失敗しても起動できる場合がある）
 
 ## 6. ディレクトリ構成（最小）
 ```
 
-msbar/
+MenubarMsClock/
 Package.swift
 Sources/
-msbar/
-main.swift
+MenubarMsClock/
+MenubarMsClock.swift
 make_app.sh   (任意)
 spec.md
 
 ```
 
 ## 7. 受け入れ基準（Acceptance Criteria）
-1. `open msbar.app` で起動できる
+1. `open MenubarMsClock.app` で起動できる
 2. Dock にアイコンが表示されない
 3. メニューバーに `HH:mm:ss.SSS` が表示される
 4. 表示が停止せず、ミリ秒が変化して見える

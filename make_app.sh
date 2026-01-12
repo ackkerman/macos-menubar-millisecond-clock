@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-APP_NAME="msbar"
+APP_NAME="MenubarMsClock"
 BIN=".build/release/${APP_NAME}"
 APP="${APP_NAME}.app"
 
@@ -15,10 +15,10 @@ cat > "${APP}/Contents/Info.plist" <<'PLIST'
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-  <key>CFBundleName</key><string>msbar</string>
-  <key>CFBundleDisplayName</key><string>msbar</string>
-  <key>CFBundleIdentifier</key><string>local.msbar</string>
-  <key>CFBundleExecutable</key><string>msbar</string>
+  <key>CFBundleName</key><string>MenubarMsClock</string>
+  <key>CFBundleDisplayName</key><string>MenubarMsClock</string>
+  <key>CFBundleIdentifier</key><string>local.menubarmsclock</string>
+  <key>CFBundleExecutable</key><string>MenubarMsClock</string>
   <key>CFBundlePackageType</key><string>APPL</string>
   <key>CFBundleShortVersionString</key><string>0.1.0</string>
   <key>CFBundleVersion</key><string>1</string>

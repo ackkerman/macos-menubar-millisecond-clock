@@ -114,7 +114,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
         menu.addItem(.separator())
 
-        let quitItem = NSMenuItem(title: "Quit msbar", action: #selector(quit), keyEquivalent: "q")
+        let quitItem = NSMenuItem(title: "Quit MenubarMsClock", action: #selector(quit), keyEquivalent: "q")
         quitItem.target = self
         menu.addItem(quitItem)
 
@@ -178,7 +178,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
                 try SMAppService.mainApp.unregister()
             }
         } catch {
-            NSLog("[msbar] Failed to toggle launch at login: \(error.localizedDescription)")
+            NSLog("[MenubarMsClock] Failed to toggle launch at login: \(error.localizedDescription)")
         }
         sender.state = isLaunchAtLoginEnabled ? .on : .off
     }

@@ -5,13 +5,13 @@
     <key>CFBundleDevelopmentRegion</key>
     <string>en</string>
     <key>CFBundleExecutable</key>
-    <string>msbar</string>
+    <string>MenubarMsClock</string>
     <key>CFBundleIdentifier</key>
-    <string>local.msbar</string>
+    <string>local.menubarmsclock</string>
     <key>CFBundleInfoDictionaryVersion</key>
     <string>6.0</string>
     <key>CFBundleName</key>
-    <string>msbar</string>
+    <string>MenubarMsClock</string>
     <key>CFBundlePackageType</key>
     <string>APPL</string>
     <key>CFBundleShortVersionString</key>

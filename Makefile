@@ -1,5 +1,5 @@
 SWIFT=swift
-APP_NAME=msbar
+APP_NAME=MenubarMsClock
 BUILD_DIR=.build
 APP_BUNDLE=$(APP_NAME).app
 
