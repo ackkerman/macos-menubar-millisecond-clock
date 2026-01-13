@@ -1,40 +1,38 @@
 # MenubarMsClock — macOS Menu Bar Millisecond Clock
 
-A tiny menu bar resident app that shows the current time as `HH:mm:ss.SSS`. It hides from the Dock and updates every 10ms by default (tune `updateInterval` in `Sources/MenubarMsClock/MenubarMsClock.swift` if you prefer ~16.6ms/60Hz).
+<p align="center">
+  <img src="assets/icon.png" alt="MenubarMsClock icon" width="160">
+</p>
 
-### Features
-- Menu bar clock with monospaced digits to avoid jitter
-- Click menu to switch display format (`HH:mm:ss.SSS`, `HH:mm:ss`, `HH:mm`, `HH:mm:ss` on first line + `SSS` on second line, `mm:ss.SSS`)
-- Toggle “Run on Startup” (Launch at Login) from the menu
-- Quit option in the menu
+超軽量のメニューバー常駐アプリ。現在時刻を `HH:mm:ss.SSS` 形式で10ms間隔更新し、Dockには出ません。`Sources/MenubarMsClock/MenubarMsClock.swift` の `updateInterval` を変えることで 60Hz 相当 (~16.6ms) などにも調整できます。
 
-## Requirements
-- macOS 13+ (AppKit)
-- SwiftPM (Xcode GUI not required) / Swift 6 toolchain
+## 特長
+- メニューバーにモノスペース数字で表示（文字幅揺れを抑制）
+- クリックで表示フォーマットを即切替（`HH:mm:ss.SSS` / `HH:mm:ss` / `HH:mm` / 上段 `HH:mm:ss` + 下段 `SSS` / `mm:ss.SSS`）
+- メニューから「ログイン時に起動」をトグル
+- メニューから終了可能、Dock非表示
 
-## Quick start
+## 対応環境
+- macOS 13+
+- Swift 6 ツールチェーン / SwiftPM（Xcode GUI 不要）
+
+## インストールと実行
 ```bash
-make release          # build release binary
-./make_app.sh         # produce MenubarMsClock.app
-open MenubarMsClock.app        # launch (no Dock icon)
-```
-
-Install by copying the generated `.app` wherever you like, e.g. `/Applications`:
-```bash
-cp -R MenubarMsClock.app /Applications/
+make bundle          # Releaseビルド + アイコン生成 + .app 作成
+make install         # /Applications に配置（管理者権限不要）
 open /Applications/MenubarMsClock.app
 ```
-For the first launch, right-click → “Open” helps pass Gatekeeper prompts.
+Gatekeeper の初回警告を避けるには右クリック→「開く」を使用してください。
 
-### Makefile targets
-- `make build`   : debug build
-- `make release` : release build
-- `make run`     : run debug build
-- `make test`    : unit tests (requires macOS SDK/XCTest available)
-- `make bundle` / `make app` : release build → `.app` bundle
-- `make clean`   : clean builds and `.app`
+## 開発者向け
+- `make build` : デバッグビルド
+- `make run`   : デバッグビルドを実行
+- `make test`  : テスト（macOS SDK / XCTest が利用可能な環境が必要）
+- `make clean` : ビルド生成物の削除
 
-## Implementation notes
-- AppKit + `NSStatusItem` with monospaced digit font to avoid width jitter.
-- `DispatchSourceTimer` at 10ms on the main queue updates the title.
-- Dock hiding via `LSUIElement` in Info.plist and `.accessory` activation policy.
+アイコンについて: `assets/icon.png` から `make` 実行時に自動で `.iconset` / `.appiconset` / `.icns` を生成し、アプリバンドルに組み込みます。
+
+## 実装メモ
+- AppKit + `NSStatusItem`、モノスペースフォントで幅揺れを防止
+- メインキュー上の `DispatchSourceTimer` を10msで駆動
+- `LSUIElement` + `.accessory` で Dock から隠し、メニューバー専用に動作
